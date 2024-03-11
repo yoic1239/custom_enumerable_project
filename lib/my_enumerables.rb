@@ -1,5 +1,12 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    index = 0
+    self.my_each do |element|
+      yield element, index
+      index +=1
+    end
+  end
 end
 
 # You will first have to define my_each
@@ -9,8 +16,8 @@ end
 class Array
   # Define my_each here
   def my_each
-    for i in self
-      yield i
+    for element in self
+      yield element
     end
   end
 end
