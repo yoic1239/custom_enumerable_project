@@ -56,6 +56,14 @@ module Enumerable
     end
     mapped
   end
+
+  def my_inject(initial_val = 0)
+    sum = initial_val
+    self.my_each do |element|
+      sum = yield(sum, element)
+    end
+    sum
+  end
 end
 
 # You will first have to define my_each
