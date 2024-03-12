@@ -48,6 +48,14 @@ module Enumerable
       self.size
     end
   end
+
+  def my_map
+    mapped = []
+    self.my_each do |element|
+      mapped << yield(element)
+    end
+    mapped
+  end
 end
 
 # You will first have to define my_each
